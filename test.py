@@ -9,13 +9,13 @@ def test(audiofile_path):
     labels, class_names, mt_step, class_probabilities = mid_term_file_classification(audiofile_path, model_path,
                                                                                      model_type, plot_results)
 
-    # print("labels: ", len(labels))
+    print("labels: ", len(labels))
     # print "merged" segments (use labels_to_segments())
     # print("\nSegments:")
     segs, c, probs = labels_to_segments(labels, class_probabilities, mt_step)
 
     # print("segs: ", len(segs))
-    # print("prob: ", len(probs))
+    print("prob test: ", len(probs))
 
     # for iS, seg in enumerate(segs):
     #     if probs[iS] > 0.6:

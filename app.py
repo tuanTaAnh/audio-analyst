@@ -22,9 +22,9 @@ def success():
         f.save(savepath)
         # f.save(savepath)
         probs, segs, class_names, c = test(savepath)
-        # print("AAAAAA"*10)
-        # print(probs)
-        # print("AAAAAA" * 10)
+        print("AAAAAA"*10)
+        print("probs.length: ", len(probs))
+        print("AAAAAA" * 10)
         return render_template("success.html", name=f.filename, probs = probs, segs = segs, class_names = class_names, c = c)
 
 
