@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>success</title>
+</head>
+<body>
+<p>File uploaded successfully</p>
+<p>File Name: {{name}}</p>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+var probs = {{ probs|tojson }};
+var segs = {{ segs|tojson }};
+var class_names = {{ class_names|tojson }};
+var c = {{ c|tojson }};
+
+var text = "";
+var line = "";
+var i;
+for (i = 0; i < probs.length; i++) {
+    if(probs[i] > 0.58)
+    {
+        line = "segment " +  i + " " + segs[i][0] + " sec " + segs[i][1] + " sec: " + class_names[c[i]] + " voice";
+        text +=  line + "<br>";
+    }
+}
+document.getElementById("demo").innerHTML = text;
+document.getElementById("demo").innerHTML = text;
+
+</script>
+
+</body>
+</html>
