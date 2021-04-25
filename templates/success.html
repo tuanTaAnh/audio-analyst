@@ -24,6 +24,10 @@ for (i = 0; i < probs.length; i++) {
         text +=  line + "<br>";
     }
 }
+if(text=="")
+{
+    text = "Cannot detect voices in this audio file!"
+}
 document.getElementById("demo").innerHTML = text;
 document.getElementById("demo").innerHTML = text;
 

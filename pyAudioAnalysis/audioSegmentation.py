@@ -512,6 +512,8 @@ def mid_term_file_classification(input_file, model_name, model_type,
     # load input file
     sampling_rate, signal = audioBasicIO.read_audio_file(input_file)
 
+    print("signal: ", signal.shape)
+
     # convert stereo (if) to mono
     signal = audioBasicIO.stereo_to_mono(signal)
 
