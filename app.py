@@ -1,6 +1,7 @@
 from flask import *
 from test import *
 import os
+import time
 
 
 app=Flask(__name__,template_folder='templates')
@@ -17,8 +18,10 @@ def success():
     if request.method == 'POST':
         f = request.files['file']
         # print("f: ", f)
-        print("f.filename: ", f.filename)
-        savepath = os.path.join(UPLOAD_FOLDER, f.filename)
+        file_extension = f.filename.split(".")[-1]
+        filename = 'test_{}.{}'.format(int(time.time()), file_extension)
+        print("file name: ", filename)
+        savepath = os.path.join(UPLOAD_FOLDER, filename)
         f.save(savepath)
         # f.save(savepath)
         probs, segs, class_names, c = test(savepath)

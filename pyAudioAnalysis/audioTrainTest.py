@@ -75,8 +75,8 @@ def classifier_wrapper(classifier, classifier_type, test_sample):
     class_id = classifier.predict(test_sample.reshape(1, -1))[0]
     posterior = classifier.predict_proba(test_sample.reshape(1, -1))[0]
     probability = np.max(posterior)
-    print("predict: ", class_id)
-    print("probability: ", probability)
+    # print("predict: ", class_id)
+    # print("probability: ", probability)
 
     return class_id, probability
 
