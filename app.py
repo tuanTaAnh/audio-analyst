@@ -1,11 +1,10 @@
 from flask import *
 from test import *
 import os
-from werkzeug.utils import secure_filename
 
 
 app=Flask(__name__,template_folder='templates')
-UPLOAD_FOLDER = r"data/test/"
+UPLOAD_FOLDER = r"data/test"
 
 
 @app.route('/')
